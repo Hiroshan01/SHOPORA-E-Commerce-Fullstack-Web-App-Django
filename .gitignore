@@ -20,3 +20,6 @@ users/migrations
 
 #DB
 *.sqlite3
+
+#node
+node_modules

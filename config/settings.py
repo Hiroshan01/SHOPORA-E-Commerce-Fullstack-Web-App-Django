@@ -41,6 +41,10 @@ DJANGO_APPS = [
 
 CORE_APPS = [
     "accounts.apps.AccountsConfig",
+    "cart.apps.CartConfig",
+    "orders.apps.OrdersConfig",
+    "inventory.apps.InventoryConfig",
+    "payment.apps.PaymentConfig",
 ]
 
 THIRD_PARTY_APPS = []
