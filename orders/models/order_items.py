@@ -6,4 +6,6 @@ class CartItem(models.Model):
     price_snapshot = models.PositiveIntegerField()
     quantity = models.PositiveIntegerField()
     order = models.ForeignKey("orders.Order", on_delete=models.CASCADE)
-    product = models.ForeignKey("catalog.Product", on_delete=models.CASCADE)
+    product = models.ForeignKey(
+        "catalog.Product", on_delete=models.CASCADE, related_name="order_cart_items"
+    )
