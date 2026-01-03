@@ -1,0 +1,22 @@
+# Ignore Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore environment files
+.env
+.env.production
+
+# Ignore virtual environments
+venv/
+.venv
+accounts/migrations
+cart/migrations
+catalog/migrations
+inventory/migrations
+orders/migrations
+payments/migrations
+users/migrations
+
+#DB
+*.sqlite3
