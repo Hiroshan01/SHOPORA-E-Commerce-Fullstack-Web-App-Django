@@ -1,0 +1,30 @@
+#There are included apps and their model names
+
+#Accounts APP
+User
+UserProfile
+
+#Accounts APP
+#CartItem 
+CartItem
+Cart
+
+#Accounts APP
+#Catelog 
+Category
+ProductImage
+Product
+
+#Accounts APP
+#Inventory 
+Stock
+
+#Accounts APP
+#orders 
+Order
+OrderItem
+Shipping_Address
+
+#Accounts APP
+#Payment 
+Payment
