@@ -49,14 +49,20 @@ CORE_APPS = [
 
 THIRD_PARTY_APPS = []
 
-DEVELOPMENT_APPS = []# development apps like debug toolbar, another settings.py etc.
+
+DEVELOPMENT_APPS = []  # development apps like debug toolbar, another settings.py etc.
 
 PROJECT_APPS = [
-    'catalog.apps.CatalogConfig',
-
+    "catalog.apps.CatalogConfig",
 ]
 
-INSTALLED_APPS = CORE_APPS + PROJECT_APPS + THIRD_PARTY_APPS +DJANGO_APPS
+INSTALLED_APPS = CORE_APPS + PROJECT_APPS + THIRD_PARTY_APPS + DJANGO_APPS
+
+# development face
+if DEBUG:
+    INSTALLED_APPS += [
+        "django_browser_reload",
+    ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -68,12 +74,17 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+if DEBUG:
+    MIDDLEWARE += [
+        "django_browser_reload.middleware.BrowserReloadMiddleware",
+    ]
+
 ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -133,15 +144,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = "static/" # localhost:8000/static/css/style.css
+STATIC_URL = "static/"  # localhost:8000/static/css/style.css
 
-STATICFILES_DIRS = [BASE_DIR / 'static'] #Need in development 
+STATICFILES_DIRS = [BASE_DIR / "static"]  # Need in development
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
-AUTH_USER_MODEL = 'accounts.User'
+AUTH_USER_MODEL = "accounts.User"
 
-MEDIA_URL = '/media/'
+MEDIA_URL = "/media/"
 
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = BASE_DIR / "media"

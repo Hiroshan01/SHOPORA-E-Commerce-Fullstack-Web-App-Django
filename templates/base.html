@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SHOPORA E-Commerce{% endblock %}</title>
+    
+    <!-- Add ?v=2 to force reload -->
+    <link rel="stylesheet" href="{% static 'css/output.css' %}?v=2">
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body class="bg-gray-50">
+ {% include 'components/header.html' %}
+ {% include 'components/navbar.html' %}
+</body>
+</html>
