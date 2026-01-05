@@ -1,18 +1,17 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
-from django.conf.urls.static import static
-from django.conf import settings
-from accounts.views import index
-
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', index, name='index'),
+    path("admin/", admin.site.urls),
+    path("catalog/", include("catalog.urls")),
 ]
 
-#Only in development mode
+# Only in development mode
 if settings.DEBUG:
-    import django_browser_reload #noqa F401
+    import django_browser_reload
+
     urlpatterns += [
         path("__reload__/", include("django_browser_reload.urls")),
     ]
