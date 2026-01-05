@@ -19,11 +19,10 @@
                      class="absolute left-0 z-50 top-full mt-3 w-[200px] bg-white border border-gray-200 rounded-xl shadow-xl">
                     <div class="py-4">
                         <h3 class="px-6 pb-2 text-xs font-semibold uppercase text-gray-400">Categories</h3>
-                        <button class="w-full text-left px-6 py-2 text-sm font-medium hover:bg-gray-50">Electronics</button>
-                        <button class="w-full text-left px-6 py-2 text-sm font-medium hover:bg-gray-50">Fashion</button>
-                        <button class="w-full text-left px-6 py-2 text-sm font-medium hover:bg-gray-50">Home & Garden</button>
-                        <button class="w-full text-left px-6 py-2 text-sm font-medium hover:bg-gray-50">Sports</button>
-                        <button class="w-full text-left px-6 py-2 text-sm font-medium hover:bg-gray-50">Toys</button>
+                        {% for category in nav_categories %}
+                        <button class="w-full text-left px-6 py-2 text-sm font-medium hover:bg-gray-50">{{category.name}}</button>
+                        {% endfor %}
+                       
                     </div>
                 </div>
             </div>
