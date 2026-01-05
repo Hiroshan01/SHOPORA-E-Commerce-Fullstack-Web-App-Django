@@ -8,7 +8,7 @@
             
             <!-- Dropdown with Alpine.js -->
             <div x-data="{ open: false }" class="relative">
-                <button @click="open = !open" class="nav-link">
+                <button @mouseenter="open = true" @mouseleave="open = false" class="nav-link">
                     Categories
                 </button>
                 
@@ -36,7 +36,7 @@
 
         <!-- Right Section - User -->
         <div class="flex justify-end items-center gap-4" x-data="{ open: false }">
-            <button class="flex items-center gap-2 focus:outline-none" @click="open = !open">
+            <button class="flex items-center gap-2 focus:outline-none"  @mouseenter="open = true" @mouseleave="open = false">
                 <span class="hidden sm:block text-sm font-medium">User Name</span>
                 <div class="w-8 h-8 rounded-full bg-indigo-600 text-white font-bold flex items-center justify-center">
                     <span>U</span>
