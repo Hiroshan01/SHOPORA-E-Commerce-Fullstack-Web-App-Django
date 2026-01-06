@@ -3,3 +3,7 @@
 .nav-link {
    @apply px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-indigo-200 font-semibold transition-colors duration-200 
 }
+
+.btn-paginate {
+   @apply rounded-lg px-3 py-2 bg-indigo-600 text-white hover:scale-90 transition duration-300
+}

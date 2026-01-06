@@ -7,9 +7,10 @@
         <h1 class="text-2xl font-bold">All Products</h1>
         <span class="text-sm text-gray-500">{{ products.count }} products</span>
     </div>
+    <!--Product Gride-->
     {% if products %}
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-  {% for product in products %}
+    {% for product in products %}
         {% include 'catalog/components/products_cart.html' with product=product %}
     {% endfor %}
     </div>
@@ -17,6 +18,29 @@
 
     {% else %}
         <p class="text-gray-500">No products available.</p>
+    {% endif %}
+
+    {% if is_paginated %}
+    <div class="mt-10 flex justify-center">
+        <nav class="flex items-center gap-2">
+            {% if page_obj.has_previous %}
+            <a class="btn-paginate"
+            href = "?page={{ page_obj.previous_page_number }}&q={{ request.GET.q }}&sort{{ request.GET.sort }}">Previous</a>
+
+            {% endif %}
+            <span class="text-sm text-gray-600">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+            {% if page_obj.has_next %}
+            <a class="btn-paginate"
+            href = "?page={{ page_obj.next_page_number }}&q={{ request.GET.q }}&sort{{ request.GET.sort }}">Next</a>
+
+            {% endif %}
+            
+
+        </nav>
+    </div>
+       
     {% endif %}
 </div>
 

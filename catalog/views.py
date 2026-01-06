@@ -7,4 +7,4 @@ class ProductListView(ListView):
     model = Product
     template_name = "catalog/product_list.html"
     context_object_name = "products"
-    Product.objects.first
+    paginate_by = 12
