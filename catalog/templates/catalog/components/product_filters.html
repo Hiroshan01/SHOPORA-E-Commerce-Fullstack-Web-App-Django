@@ -2,8 +2,17 @@
     <input type="text" name="q" placeholder="Search Product...." class="w-full rounded-lg border-gray-300 bg-white focus:ring-indigo-500  p-4"/>
 
     <div class="gird grid-cols-2 md:col-span-2 gap-2 mb-2">
-        <input type="number" name="min_price" placeholder="Min Price" inputmode="numeric" class="w-full rounded-lg border focus:ring-indigo-500 px-3 py-2 mb-2 border-gray-300"/>
-        <input type="number" name="max_price" placeholder="Max Price" inputmode="numeric" class="w-full rounded-lg border border-gray-300 focus:ring-indigo-500 px-3 py-2"/>
+        <input type="number" name="min_price" placeholder="Min Price" inputmode="numeric" 
+        class="w-full rounded-lg border focus:ring-indigo-500 px-3 py-2 mb-2 border-gray-300"
+        x-data="{value: ''}"
+        x-mode="value"
+        @input="value = vlaue.replace(/[^0-9]/g, '')"
+        />
+        <input type="number" name="max_price" placeholder="Max Price" inputmode="numeric"
+        x-data="{value: ''}"
+        x-mode="value"
+        @input="value = vlaue.replace(/[^0-9]/g, '')"
+        class="w-full rounded-lg border border-gray-300 focus:ring-indigo-500 px-3 py-2"/>
 
     </div>
 
